@@ -1,3 +1,29 @@
 <p>
-  recipe-details works!
+  {{recipe?.name}}
 </p>
+<p>
+  {{recipe?.description}} 
+</p>
+<ul>
+  <li *ngFor="let ingredient of recipe?.ingredients">
+
+    <ul>
+      <li>
+        {{ingredient?.name}}
+      </li>
+      <li>
+        {{ingredient?.unit}}
+      </li>
+      <li>
+        {{ingredient?.quantity}}
+      </li>
+    </ul>
+
+  </li>
+</ul>
+
+<p *ngFor="let instruction of recipe?.instructions">
+  {{instruction}}
+</p>
+
+<img src={{recipe?.picture}} />

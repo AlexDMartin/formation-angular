@@ -40,7 +40,7 @@ export class RecipeService {
     return this.http.get<Recipe[]>(this.URL_GET_RECIPES);
   }
 
-  getOneRecipe(id: number): Observable<Recipe> {
+  getOneRecipe(id: string): Observable<Recipe> {
     return this.http.get<Recipe>(this.URL_GET_RECIPES + '/' + id)
   }
 }
