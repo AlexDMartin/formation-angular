@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../recipe.service';
-import { Recipe } from 'src/app/models/recipe.model';
+import { Recipe } from '../models/recipe.model';
 
 @Component({
   selector: 'app-recipes',
@@ -16,7 +16,7 @@ export class RecipesComponent implements OnInit {
   ngOnInit() {
     this.recipeService.getRecipes().subscribe(
       recipes => this.recipes = recipes,
-      error => console.error('An error occured whiel calling the recipe service')
+      error => console.error('An error occured while calling the recipe service')
     )
   }
 

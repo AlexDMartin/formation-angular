@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RecipeService } from '../recipe.service';
-import { Recipe } from 'src/app/models/recipe.model';
+import { Recipe } from '../models/recipe.model';
 
 @Component({
   selector: 'app-recipe-details',
@@ -17,7 +17,7 @@ export class RecipeDetailsComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
 
-    this.recipeService.getOneRecipe(+id).subscribe(
+    this.recipeService.getOneRecipe(id).subscribe(
       recipe => this.recipe = recipe, 
       error => console.error('Recipe couldn\'t be found')
       );
