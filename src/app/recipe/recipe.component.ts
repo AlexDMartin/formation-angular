@@ -10,5 +10,11 @@ export class RecipeComponent {
   
   @Input()
   recipe: Recipe
+
+  isExpanded = false;
+
+  toggleInfo(): void {
+    this.isExpanded = !this.isExpanded;
+  }
   
 }

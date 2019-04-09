@@ -1,5 +1,21 @@
 <li>
+
   <div class="recipe-container">
       {{recipe?.name}}
   </div>
+
+  <div class="button">
+
+    <button (click)="toggleInfo()">
+      See 
+      <span class="more" *ngIf="!isExpanded">more</span>
+      <span class="less" *ngIf="isExpanded">less</span>
+    </button>
+
+    <div class="description" *ngIf="isExpanded">
+      {{recipe?.description}}
+    </div>
+
+  </div>
+
 </li>

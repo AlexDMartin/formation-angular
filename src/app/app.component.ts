@@ -14,12 +14,15 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     const recipe1 = new Recipe();
     recipe1.name = 'Dry Martini';
+    recipe1.description = 'Description du Dry Martini';
 
     const recipe2 = new Recipe();
     recipe2.name = 'Daiquiri';
+    recipe2.description = 'Description du Daiquiri';
 
     const recipe3 = new Recipe();
     recipe3.name = 'Mojito';
+    recipe3.description = 'Description du Mojito';
 
     this.recipes = [];
     this.recipes.push(recipe1);
