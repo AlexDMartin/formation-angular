@@ -15,9 +15,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     this.recipeService.getRecipes().subscribe(
-      (recipes: Recipe[]) => {
-        this.recipes = recipes
-      } 
+      recipes => this.recipes = recipes 
     )
   }
 }
