@@ -15,7 +15,8 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     this.recipeService.getRecipes().subscribe(
-      recipes => this.recipes = recipes 
+      recipes => this.recipes = recipes,
+      error => console.error('An error occured whiel calling the recipe service')
     )
   }
 }
