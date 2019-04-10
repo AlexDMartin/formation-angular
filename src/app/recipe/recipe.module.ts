@@ -3,6 +3,7 @@ import { RecipeDashboardRowComponent } from './recipe-dashboard-row/recipe-dashb
 import { RecipeDashboardComponent } from './recipe-dashboard/recipe-dashboard.component';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
@@ -11,7 +12,8 @@ import { CommonModule } from '@angular/common';
         RecipeDetailsComponent
     ],
     imports: [
-        CommonModule
+        CommonModule,
+        RouterModule
     ],
     exports: [
         RecipeDashboardRowComponent,

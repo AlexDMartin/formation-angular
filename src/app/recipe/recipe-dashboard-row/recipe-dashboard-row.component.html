@@ -6,10 +6,8 @@
 
   <div class="button">
 
-    <button (click)="toggleInfo()">
+    <button routerLink="/recipes/{{ recipe?.id }}">
       See 
-      <span class="more" *ngIf="!isExpanded">more</span>
-      <span class="less" *ngIf="isExpanded">less</span>
     </button>
 
     <div class="description" *ngIf="isExpanded">

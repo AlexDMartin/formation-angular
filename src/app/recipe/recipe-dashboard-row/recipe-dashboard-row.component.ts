@@ -11,10 +11,4 @@ export class RecipeDashboardRowComponent {
   @Input()
   recipe: Recipe
 
-  isExpanded = false;
-
-  toggleInfo(): void {
-    this.isExpanded = !this.isExpanded;
-  }
-
 }
