@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { RecipeService } from 'src/app/services/recipe/recipe.service';
+import { Ingredient } from '../models/ingredient.model';
+import { IngredientService } from 'src/app/services/recipe/ingredient.service';
 
 @Component({
   selector: 'app-recipe-form',
@@ -9,13 +11,28 @@ import { RecipeService } from 'src/app/services/recipe/recipe.service';
 })
 export class RecipeFormComponent implements OnInit {
 
-  recipeForm = new FormGroup({
-    name: new FormControl('', Validators.required),
-    description: new FormControl(''),
-    picture: new FormControl('')
-  });
+  recipeForm: FormGroup;
+  ingredients: Ingredient[];
 
-  constructor(private recipeService: RecipeService, private fb: FormBuilder) {}
+  constructor(private recipeService: RecipeService, private ingredientService: IngredientService, private fb: FormBuilder) {}
+
+  ngOnInit() {
+
+    // Populating ingredient list
+    this.ingredientService.getIngredients().subscribe(
+      ingredients => this.ingredients = ingredients,
+      error => console.error('An error occured while calling the ingredient service')
+    )
+
+    // Populating form
+     this.recipeForm = this.fb.group({
+      name: ['', Validators.required],
+      description: ['', Validators.required],
+      picture: [''],
+      ingredients: this.fb.array([]),
+      instructions: this.fb.array([])
+    });
+  }
 
   onSubmit() : void {
     console.debug(this.recipeForm.value);
@@ -26,15 +43,20 @@ export class RecipeFormComponent implements OnInit {
     )
   }
 
-  ngOnInit() {
-/*     this.recipeForm = this.fb.group({
-      name: ['', Validators.required],
-      ingredients: this.fb.array([])
-    });
+  addIngredient() {
+    console.debug('Adding ingredient');
+  }
 
-    (this.recipeForm.get('ingredients') as FormArray).controls.forEach(element => {
-      
-    }); */
+  removeIngredient() {
+    console.debug('Remove ingredient')
+  }
+
+  addInstruction() {
+    console.debug('Adding instruction');
+  }
+
+  removeInstruction() {
+    console.debug('Remove instruction')
   }
 
 }

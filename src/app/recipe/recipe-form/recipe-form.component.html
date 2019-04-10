@@ -21,6 +21,22 @@
           </label>
       </div>
 
+      <div class="ingredient-input">
+          <select>
+            <option *ngFor="let ingredient of ingredients" value={{ingredient.id}}>{{ingredient.name}}</option>
+          </select>
+          <input type="text" id="quantity" name="quantity" placeholder="Enter the quantity">
+          <input type="text" id="unity" name="unity" placeholder="Enter the unity">
+          <button type="button" (click)="removeIngredient()">-</button>
+          <button type="button" (click)="addIngredient()">+</button>
+      </div>
+
+      <div class="instruction-input">
+        <input type="text" id="instruction" name="instruction" placeholder="Enter the instruction">
+        <button type="button" (click)="removeInstruction()">-</button>
+        <button type="button"  (click)="addInstruction()">+</button>
+      </div>
+
       <div class="submit-button">
           <button type="submit">Submit</button>
       </div>
