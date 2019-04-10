@@ -1,15 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-recipe-form',
   templateUrl: './recipe-form.component.html',
   styleUrls: ['./recipe-form.component.scss']
 })
-export class RecipeFormComponent implements OnInit {
+export class RecipeFormComponent {
 
-  constructor() { }
+  recipeForm = new FormGroup({
+    name: new FormControl(''),
+    description: new FormControl(''),
+    picture: new FormControl('')
+  });
 
-  ngOnInit() {
+  onSubmit() : void {
+    console.debug(this.recipeForm.value);
+
+    
   }
 
 }

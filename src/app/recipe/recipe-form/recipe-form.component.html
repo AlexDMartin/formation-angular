@@ -1,22 +1,30 @@
 <div class="add-recipe-form">
+    <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+      <div class="name-input">
+        <label>
+          Name
+          <input type="text" formControlName="name"  id="name" name="name" placeholder="Enter the name">
+        </label>
+      </div>
 
-    <div class="name-input">
-      <input type="text" id="name" name="name" placeholder="Enter the name"/>
-    </div>
-  
-    <div class="description-input">
-      <input type="text" id="description" name="description" placeholder="Enter the description"/>
-    </div>
-  
-   <!-- <div class="picture-input">
-      <input type="file" id="picture" name="picture"/>
-    </div> -->
-  
-  
-    <div class="submit-button">
-      <button type="submit">Accept</button>
-    </div>
-  
+      <div class="description-input">
+        <label>
+          Description
+          <input type="text" formControlName="description" id="description" name="description" placeholder="Enter the description"/>
+        </label>
+      </div>
+
+      <div class="picture-input">
+          <label>
+            Picture
+            <input type="text" formControlName="picture" id="picture" name="picture" placeholder="Enter the picture"/>
+          </label>
+      </div>
+
+      <div class="submit-button">
+          <button type="submit">Submit</button>
+      </div>
+    </form>
 
 </div>
 
