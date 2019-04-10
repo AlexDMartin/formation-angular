@@ -5,6 +5,8 @@ import { RecipeDetailsComponent } from './recipe-details/recipe-details.componen
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { RecipeFormComponent } from './recipe-form/recipe-form.component';
+import { NavigationModule } from '../navigation/navigation.module';
+import { ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
     declarations: [
@@ -15,7 +17,9 @@ import { RecipeFormComponent } from './recipe-form/recipe-form.component';
     ],
     imports: [
         CommonModule,
-        RouterModule
+        RouterModule,
+        NavigationModule,
+        ReactiveFormsModule
     ],
     exports: [
         RecipeDashboardRowComponent,
