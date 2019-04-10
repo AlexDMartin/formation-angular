@@ -1,3 +1,8 @@
+<div class="new-recipe-button">
+  <button routerLink="/recipes/add">Create new</button>
+</div>
+
+
 <div class="recipes-tab">
   <ul *ngFor="let recipe of recipes">
       <app-recipe [recipe]='recipe'></app-recipe>

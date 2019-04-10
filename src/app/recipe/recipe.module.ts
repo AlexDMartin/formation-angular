@@ -4,12 +4,14 @@ import { RecipeDashboardComponent } from './recipe-dashboard/recipe-dashboard.co
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { RecipeFormComponent } from './recipe-form/recipe-form.component';
 
 @NgModule({
     declarations: [
         RecipeDashboardRowComponent,
         RecipeDashboardComponent,
-        RecipeDetailsComponent
+        RecipeDetailsComponent,
+        RecipeFormComponent
     ],
     imports: [
         CommonModule,

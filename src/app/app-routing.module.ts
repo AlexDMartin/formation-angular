@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router'
 import { RecipeDashboardComponent } from './recipe/recipe-dashboard/recipe-dashboard.component';
 import { RecipeDetailsComponent } from './recipe/recipe-details/recipe-details.component';
+import { RecipeFormComponent } from './recipe/recipe-form/recipe-form.component';
 
 const routes: Routes = [
   {
@@ -11,8 +12,12 @@ const routes: Routes = [
       pathMatch: 'full'
   },
   {
-    path: 'recipes/:id',
+    path: 'recipe/:id',
     component: RecipeDetailsComponent
+  },
+  {
+    path: 'recipes/add',
+    component: RecipeFormComponent
   },
   {
       path: '**',

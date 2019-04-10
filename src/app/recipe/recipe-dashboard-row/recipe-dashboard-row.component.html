@@ -6,13 +6,9 @@
 
   <div class="button">
 
-    <button routerLink="/recipes/{{ recipe?.id }}">
+    <button routerLink="/recipe/{{ recipe?.id }}">
       See 
     </button>
-
-    <div class="description" *ngIf="isExpanded">
-      {{recipe?.description}}
-    </div>
 
   </div>
 
