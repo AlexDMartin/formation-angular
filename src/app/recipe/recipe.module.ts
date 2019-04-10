@@ -1,22 +1,22 @@
 import { NgModule } from "@angular/core";
-import { RecipeComponent } from './recipe.component';
-import { RecipesComponent } from './recipes/recipes.component';
+import { RecipeDashboardRowComponent } from './recipe-dashboard-row/recipe-dashboard-row.component';
+import { RecipeDashboardComponent } from './recipe-dashboard/recipe-dashboard.component';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
     declarations: [
-        RecipeComponent,
-        RecipesComponent,
+        RecipeDashboardRowComponent,
+        RecipeDashboardComponent,
         RecipeDetailsComponent
     ],
     imports: [
         CommonModule
     ],
     exports: [
-        RecipeComponent,
-        RecipesComponent,
+        RecipeDashboardRowComponent,
+        RecipeDashboardComponent,
         RecipeDetailsComponent
-    ]  
+    ]
 })
 export class RecipeModule {}

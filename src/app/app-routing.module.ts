@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router'
-import { RecipesComponent } from './recipe/recipes/recipes.component';
+import { RecipeDashboardComponent } from './recipe/recipe-dashboard/recipe-dashboard.component';
 import { RecipeDetailsComponent } from './recipe/recipe-details/recipe-details.component';
 
 const routes: Routes = [
   {
       path: 'recipes',
-      component: RecipesComponent,
+      component: RecipeDashboardComponent,
       pathMatch: 'full'
   },
   {
     path: 'recipes/:id',
-    component: RecipeDetailsComponent,
-    pathMatch: 'full'
+    component: RecipeDetailsComponent
   },
   {
       path: '**',

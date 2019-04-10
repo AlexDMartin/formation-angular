@@ -1,13 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Recipe } from './models/recipe.model';
+import { Recipe } from '../models/recipe.model';
 
 @Component({
   selector: 'app-recipe',
-  templateUrl: './recipe.component.html',
-  styleUrls: ['./recipe.component.scss']
+  templateUrl: './recipe-dashboard-row.component.html',
+  styleUrls: ['./recipe-dashboard-row.component.scss']
 })
-export class RecipeComponent {
-  
+export class RecipeDashboardRowComponent {
+
   @Input()
   recipe: Recipe
 
@@ -16,5 +16,5 @@ export class RecipeComponent {
   toggleInfo(): void {
     this.isExpanded = !this.isExpanded;
   }
-  
+
 }
